@@ -1,0 +1,29 @@
+﻿<div id="body">
+    <div>
+        <h3>Upload File to Controller</h3>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div>
+                <input type="file" name="postedFile" id="postedFile" multiple />
+            </div>
+
+            <div>
+                <input type="submit" name="btn-submit-to-controller" value="Upload To Controller" />
+            </div>            
+        }
+
+    </div>
+
+    <div>
+        <h3>Upload File directly to WEB API Method</h3>
+        <form action="api/UploadFile" method="post" enctype="multipart/form-data">
+            <div>
+                <input type="file" name="fileUploder" id="fileUploder" multiple />
+            </div>
+
+            <div>
+                <input type="submit" name="btn-submit-to-webapi" value="Upload Directly To Web API" />
+            </div>
+        </form>
+    </div>
+</div>
